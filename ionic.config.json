@@ -1,0 +1,7 @@
+{
+  "name": "immoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
