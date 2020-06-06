@@ -23,6 +23,6 @@ export class LoginPage implements OnInit {
 
   login(){
     console.debug("Connexion réussi");
-    this.routeur.navigate(['checklist']);
+    this.routeur.navigate(['accueil']);
   }
 }

@@ -14,12 +14,22 @@ import { AppRoutingModule } from './app-routing.module';
 import {LoginPage} from '../app/pages/login/login.page';
 import {ChecklistPage} from '../app/pages/checklist/checklist.page';
 import {AccueilPage} from '../app/pages/accueil/accueil.page';
+
+//import components : 
+import { TableauComponent } from './components/tableau/tableau.component';
+import { FormulaireComponent } from './components/formulaire/formulaire.component';
+
+//import Providers 
+import { VisitesProvider } from './providers/visites/visites.provider';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginPage,
     ChecklistPage,
     AccueilPage,
+    TableauComponent,
+    FormulaireComponent,
   ],
   entryComponents: [],
   imports: [
@@ -30,8 +40,10 @@ import {AccueilPage} from '../app/pages/accueil/accueil.page';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    VisitesProvider,
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {}

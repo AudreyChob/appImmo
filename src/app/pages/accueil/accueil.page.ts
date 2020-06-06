@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 
 
@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accueil.page.scss'],
 })
 export class AccueilPage implements OnInit {
-/*   visites = [{
-    text: 'Test test',    
-}, 
 
-];*/
+  @Input('header') header : any[];
+  @Input('datas') datas : any[];
+  @Input('items') items : any;
   constructor() { }
 
   ngOnInit() {

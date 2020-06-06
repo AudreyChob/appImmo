@@ -1,0 +1,55 @@
+<form (ngSubmit)="visiteForm.form.valid && addVisite()" #visiteForm="ngForm">
+  <ion-item>
+    <ion-label>Visite</ion-label>
+    <ion-input type="date" name="date" id="date" [(ngModel)]="items.date" ></ion-input>      
+    <ion-label>Adresse</ion-label>
+    <ion-input type="text" name="adresse"[(ngModel)]="items.adresse"></ion-input>     
+  </ion-item>
+  <ion-item>
+    <ion-label>Cordonnées du contact</ion-label>
+  </ion-item>
+  <ion-row>
+    <ion-row>
+      <ion-input type="text" size="50" placeholder="Nom / prénom du contact" name="coordonnees"[(ngModel)]="items.coordonnees" ></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input type="text" size="10" placeholder="Téléphone" name="telephone"[(ngModel)]="items.telephone"></ion-input>
+      <ion-input type="text" size="30" placeholder="Email" name="emeil" [(ngModel)]="items.email"></ion-input>
+    </ion-row>
+  </ion-row>
+
+  <ion-item>
+    <ion-label>Détails du bien</ion-label>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-select placeholder="Type de bien" name="type" [(ngModel)]="items.type">
+        <ion-select-option value="maison">Maison</ion-select-option>
+        <ion-select-option value="appartement">Appartement</ion-select-option>
+        <ion-select-option value="immeuble">Immeuble</ion-select-option>
+        <ion-select-option value="villa">Villa</ion-select-option>
+        <ion-select-option value="autre">Autre</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col>
+      <ion-input type="number" size="2" placeholder="Nbr pièce" min="0" max="50" name="pieces"[(ngModel)]="items.pieces"></ion-input>
+      <ion-input type="text" size="6" placeholder="Superficie" name="superficie"[(ngModel)]="items.superficie"></ion-input>
+      <ion-input type="text" size="10" placeholder="Explosition" name="exposition"[(ngModel)]="items.exposition"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-item>
+    Prix, charges, taxe
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-input type="text" size="10" placeholder="Prix" name="prix" [(ngModel)]="items.prix"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="text" size="4" placeholder="Charges" name="charges"[(ngModel)]="items.charges"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="text" size="4" placeholder="Taxe foncière" name="taxe"[(ngModel)]="items.taxe"></ion-input>  
+    </ion-col>
+  </ion-row>
+
+</form>
