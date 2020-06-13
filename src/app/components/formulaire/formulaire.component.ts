@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { unsupported } from '@angular/compiler/src/render3/view/util';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire',
@@ -9,9 +9,18 @@ import { unsupported } from '@angular/compiler/src/render3/view/util';
 export class FormulaireComponent implements OnInit {
  
   @Input('items') items : any;
- 
+  @Input('header') header : any[];
+  @Input('datas') datas : any[];
+  //@Output() addVisite = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {}
 
-}
+  /* visiteAdd() {
+    this.addVisite.emit(this.items);  // Déclenche l'output en passant la température
+  } */
+
+
+} 
+

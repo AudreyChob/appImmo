@@ -14,7 +14,7 @@
     <ion-input type="password" name="password" [(ngModel)]="formModel.password" placeholder="Entrez votre mot de passe*"  required ></ion-input>
   </form>
 
-  <ion-button type="submit" (click)="login()" [disabled]="!loginForm.form.valid"> Connexion</ion-button>
+  <button type="submit" (click)="login()" [disabled]="!loginForm.form.valid"> Connexion</button>
 
 
 </ion-content>
