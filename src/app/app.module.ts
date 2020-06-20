@@ -31,7 +31,7 @@ import { CardComponent } from './components/card/card.component';
     AppComponent,
     LoginPage,
     ChecklistPage,
-    AccueilPage,
+    AccueilPage, 
     TableauComponent,
     FormulaireComponent,
     CardComponent,
