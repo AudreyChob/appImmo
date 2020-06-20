@@ -9,7 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IonicStorageModule } from '@ionic/storage';
+//import { LocalStorage } from '@ngx-pwa/local-storage';
+
+
 //import pages : 
 import {LoginPage} from '../app/pages/login/login.page';
 import {ChecklistPage} from '../app/pages/checklist/checklist.page';
@@ -38,7 +40,7 @@ import { VisitesProvider } from './providers/visites/visites.provider';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    IonicStorageModule.forRoot(),],
+    ],
   providers: [
     StatusBar,
     SplashScreen,

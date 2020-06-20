@@ -21,6 +21,8 @@ export class TableauComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+  getVisite(){
     
   }
 

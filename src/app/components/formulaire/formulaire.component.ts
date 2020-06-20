@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { VisitesProvider } from 'src/app/providers/visites/visites.provider';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
 @Component({
   selector: 'app-formulaire',
@@ -7,20 +9,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulaire.component.scss'],
 })
 export class FormulaireComponent implements OnInit {
- 
-  @Input('items') items : any;
-  @Input('header') header : any[];
-  @Input('datas') datas : any[];
-  //@Output() addVisite = new EventEmitter();
+  @Input('items') items;
   
-  constructor() { }
+  constructor(
+    public visitesProvider : VisitesProvider,
+    private router : Router,
+    private storage : LocalStorage,
 
-  ngOnInit() {}
+  ) { }
+
+  ngOnInit() {
+    var _ = this;
+    _.items = this.visitesProvider.items;
+    console.log(_.items)
+  }
 
   /* visiteAdd() {
     this.addVisite.emit(this.items);  // Déclenche l'output en passant la température
   } */
 
+  addVisite(){
+    var _ = this;
+    console.log(_.items) 
+    this.storage.setItem('data', _.items);
+    this.router.navigate(['accueil']);
+    console.debug(this.items)
 
+  }
 } 
 

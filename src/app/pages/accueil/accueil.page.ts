@@ -1,5 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { VisitesProvider } from 'src/app/providers/visites/visites.provider';
+import { Component, OnInit,Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -7,19 +6,14 @@ import { Router } from '@angular/router';
   selector: 'app-accueil',
   templateUrl: './accueil.page.html',
   styleUrls: ['./accueil.page.scss'],
-  providers: [VisitesProvider,
-],
 })
 export class AccueilPage implements OnInit {
+
   items : any;
   header : any[];
-  datas  : any [];
-  /* @Input('header') header : any[];
-  @Input('items') items : any; 
-  @Input('datas') datas : any[];*/
+  datas : any[];
 
   constructor(
-    public visitesProvider : VisitesProvider,
     private router : Router,
   )
    { 
@@ -27,13 +21,28 @@ export class AccueilPage implements OnInit {
    }
   
    ngOnInit() {
-     this.items = this.visitesProvider.getItemsVisites();
-     this.header = Object.keys(this.items)
-     this.datas = [this.items];
-     console.debug(this.header)
-    console.debug('itemmms' + this.items)
+    var _ = this;
+    var visite = JSON.parse(localStorage.getItem("visite"));
+    visite = visite.visite.visite;
+    console.debug("var visite " + visite);
+    _.items = visite;
+    this.items = _.items;
+    console.log("_.items" +_.items);
 
+
+    var headerVisite = JSON.parse(localStorage.getItem("headerVisite"));
+    headerVisite = headerVisite.headerVisite.headerVisite;
+    _.header = headerVisite;
+    this.header = _.header;
+    console.log('header acc ' + headerVisite);
+
+
+    _.datas = [_.items];
+    console.log("datas" +_.datas)
+    this.datas = _.datas;
   }
+
+
   addNewVisite(){
     this.router.navigate(['checklist'])
   }

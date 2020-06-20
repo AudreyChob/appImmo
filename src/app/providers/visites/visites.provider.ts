@@ -1,5 +1,5 @@
 import {Injectable } from '@angular/core';
-import {Storage} from '@ionic/storage';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
 
 @Injectable()
@@ -10,16 +10,8 @@ export class VisitesProvider {
     datas: any[];
     liste :  any;
     constructor(
-      private storage : Storage,
-    ){
-      var _ = this;
-      this.storage.get('data').then((val) => {
-        _.datas = val;
-        this.datas = _.datas;
-        //console.log('Your age is', JSON.stringify(this.datas));
-        return this.datas;
-      });
-    }
+      private storage : LocalStorage,
+    ){ }
 
     getItemsVisites(){
       var _ = this;
@@ -49,12 +41,12 @@ export class VisitesProvider {
       return this.header;
     }
     updateDatas(){
-      var _ = this;
+/*       var _ = this;
       _.datas = [_.items];
       this.storage.set('data', _.datas);
       console.debug("p.data"+_.datas)
       console.debug('p items'+_.items)
-      return _.datas
+      return _.datas */
     }
 
 }
