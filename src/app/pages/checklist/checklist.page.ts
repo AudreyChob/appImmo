@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { VisitesProvider } from 'src/app/providers/visites/visites.provider';
+
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
 
@@ -13,10 +13,6 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
   selector: 'app-checklist',
   templateUrl: './checklist.page.html',
   styleUrls: ['./checklist.page.scss'],
-  providers: [
-    VisitesProvider,
-
-  ],
 })
 export class ChecklistPage implements OnInit {
    items: {date: any, adresse: string, coordonnees: string, telephone: string, email: string,
@@ -40,8 +36,7 @@ export class ChecklistPage implements OnInit {
 
   constructor(
     private router : Router,
-    public visitesProvider : VisitesProvider,
-    private storage : LocalStorage,
+    private localStorage : LocalStorage,
 
   )
     { 

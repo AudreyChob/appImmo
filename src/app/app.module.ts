@@ -20,9 +20,10 @@ import {AccueilPage} from '../app/pages/accueil/accueil.page';
 //import components : 
 import { TableauComponent } from './components/tableau/tableau.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { CardComponent } from './components/card/card.component';
 
 //import Providers 
-import { VisitesProvider } from './providers/visites/visites.provider';
+
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { VisitesProvider } from './providers/visites/visites.provider';
     AccueilPage,
     TableauComponent,
     FormulaireComponent,
+    CardComponent,
   ],
   entryComponents: [],
   imports: [
@@ -40,12 +42,13 @@ import { VisitesProvider } from './providers/visites/visites.provider';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
+    
     ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    VisitesProvider,
+
 
   ],
 

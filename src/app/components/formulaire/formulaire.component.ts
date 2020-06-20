@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { VisitesProvider } from 'src/app/providers/visites/visites.provider';
+
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
 @Component({
@@ -12,7 +12,7 @@ export class FormulaireComponent implements OnInit {
   @Input('items') items;
   
   constructor(
-    public visitesProvider : VisitesProvider,
+
     private router : Router,
     private storage : LocalStorage,
 
@@ -20,7 +20,6 @@ export class FormulaireComponent implements OnInit {
 
   ngOnInit() {
     var _ = this;
-    _.items = this.visitesProvider.items;
     console.log(_.items)
   }
 
