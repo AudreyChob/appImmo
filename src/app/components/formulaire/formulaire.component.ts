@@ -24,9 +24,6 @@ export class FormulaireComponent implements OnInit {
     console.log(_.items)
   }
 
-  /* visiteAdd() {
-    this.addVisite.emit(this.items);  // Déclenche l'output en passant la température
-  } */
 
   addVisite(){
     var _ = this;
