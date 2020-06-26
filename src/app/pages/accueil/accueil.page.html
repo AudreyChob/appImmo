@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mes Visites</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" (click)="displayMenu()"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-card-visite [header]="header" [datas]="datas"></app-card-visite>
+  <ion-button (click)="addNewVisite()"> + </ion-button>
+</ion-content>

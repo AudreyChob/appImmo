@@ -1,0 +1,30 @@
+
+  <ion-app>
+    <ion-split-pane when="md">
+        <ion-menu side="start" content-id="content" id="menu">
+            <ion-header translucent>
+              <ion-toolbar color="secondary">
+                <ion-title>Menu</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content id="content">
+              <ion-list>
+                <ion-item >
+                  <ion-button (click)="goToAccueil()">
+                    <ion-icon name="home"></ion-icon>Accueil
+                  </ion-button>
+                </ion-item>
+                <ion-item >
+                  <ion-button (click)="goToChecklist()">
+                   <ion-icon name="clipboard"></ion-icon>Nouvelle visite
+                  </ion-button>
+                </ion-item>
+                <ion-item ><ion-icon name="calculator"></ion-icon>Calculateur</ion-item>
+                <ion-item ><ion-icon name="person"></ion-icon>Profil</ion-item>
+              </ion-list>
+            </ion-content>
+          </ion-menu>
+          <ion-router-outlet id="router-outlet"></ion-router-outlet>
+        </ion-split-pane>
+</ion-app>
+

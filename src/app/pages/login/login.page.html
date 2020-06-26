@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content">
+
+  <form  (ngSubmit)="loginForm.form.valid && login()" #loginForm="ngForm">
+    <ion-label> Indentifiant</ion-label>
+    <ion-input type="type" name="login"  [(ngModel)]="formModel.login" placeholder="Entrez votre identifiant*" required ></ion-input>
+
+    <ion-label> Mot de passe</ion-label>
+    <ion-input type="password" name="password" [(ngModel)]="formModel.password" placeholder="Entrez votre mot de passe*"  required ></ion-input>
+  </form>
+
+  <button type="submit" (click)="login()" [disabled]="!loginForm.form.valid"> Connexion</button>
+
+
+</ion-content>

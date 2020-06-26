@@ -1,0 +1,30 @@
+  <div class="tableau">
+    <ion-row>
+      <ion-col  size="12">  
+    <ion-item>
+    <ion-searchbar></ion-searchbar>
+    </ion-item>
+    <ion-grid >
+      <ion-row >
+        <ion-col class="tabTitre"  *ngFor="let title of header">
+          {{title}}
+        </ion-col>
+        <ion-col class="tabTitre" size="2"></ion-col>
+       </ion-row>
+       <ion-row *ngFor="let item of datas">
+        <ion-col class="tab" *ngFor="let key of header">
+          {{item[key]}}
+        </ion-col>
+        <ion-col class="tab" size="2">
+          <ion-button size="small" color="success" >
+            Editer
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+    <ion-item>
+
+    </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
