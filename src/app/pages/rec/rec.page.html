@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>REC</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" (click)="displayMenu()"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="getPermission()"> Permission  </ion-button>
+  <ion-button (click)="startListening()" [color]="isRecording ? 'danger' : 'primary' "> REC  </ion-button>
+  <ion-button (click)="stopListening()" *ngIf="isIos()"> Stop  </ion-button>
+
+  <ion-card>
+    <ion-card-header> Ma visite enregistrée </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let match of matches">
+          {{ match }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

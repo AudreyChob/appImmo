@@ -64,4 +64,8 @@ export class ChecklistPage implements OnInit {
       localStorage.setItem('headerVisite', JSON.stringify({headerVisite}));
       console.log("header check " +this.header);
     } 
+
+    addRec(){
+      this.router.navigate(['rec']);
+    }
 }

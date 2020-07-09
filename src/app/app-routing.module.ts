@@ -5,6 +5,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {LoginPage} from '../app/pages/login/login.page';
 import {ChecklistPage} from '../app/pages/checklist/checklist.page';
 import { AccueilPage } from './pages/accueil/accueil.page';
+import { RecPage } from './pages/rec/rec.page';
+
 
 const routes: Routes = [
   {
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path:'accueil',
     component: AccueilPage,
+  },
+  {
+    path:'rec',
+    component: RecPage,
   },
   {
     path: 'login',

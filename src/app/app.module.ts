@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -16,10 +17,13 @@ import { AppRoutingModule } from './app-routing.module';
 import {LoginPage} from '../app/pages/login/login.page';
 import {ChecklistPage} from '../app/pages/checklist/checklist.page';
 import {AccueilPage} from '../app/pages/accueil/accueil.page';
+import {RecPage} from '../app/pages/rec/rec.page';
+
 
 //import components : 
 import { TableauComponent } from './components/tableau/tableau.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 
 //import Providers 
 import { VisitesProvider } from './providers/visites/visites.provider';
@@ -31,6 +35,7 @@ import { VisitesProvider } from './providers/visites/visites.provider';
     LoginPage,
     ChecklistPage,
     AccueilPage,
+    RecPage,
     TableauComponent,
     FormulaireComponent,
   ],
@@ -44,6 +49,7 @@ import { VisitesProvider } from './providers/visites/visites.provider';
   providers: [
     StatusBar,
     SplashScreen,
+    SpeechRecognition,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     VisitesProvider,
 
